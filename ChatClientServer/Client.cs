@@ -20,7 +20,7 @@ namespace ChatClient
             Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             int port = 8080;
             string serverAddress;
-            Console.WriteLine("Input Server IP Address:");
+            Console.Write("Input Server IP Address:");
             serverAddress = Console.ReadLine();
             IPEndPoint endPoint = new IPEndPoint(IPAddress.Parse(serverAddress), port);
 
@@ -46,7 +46,7 @@ namespace ChatClient
 
                     string data;
                     data = Encoding.ASCII.GetString(receivedMessage, 0, receivedMessageLength);
-                    Console.WriteLine("Server : ");
+                    Console.Write("Server : ");
                     Console.WriteLine(data);
 
                     if (data.IndexOf("exit") > -1 )
